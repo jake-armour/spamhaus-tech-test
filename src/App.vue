@@ -4,6 +4,6 @@ import NavBar from "./components/NavBar.vue";
 
 <template>
   <VApp>
-    <VMain><NavBar /> <RouterView /></VMain>
+    <VMain><NavBar /> <RouterView class="mt-4 w-75 mx-auto" /></VMain>
   </VApp>
 </template>
