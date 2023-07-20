@@ -13,9 +13,13 @@ import { UseUserStore } from "@/state/stores/UserStore";
 import { storeToRefs } from "pinia";
 import UsersTableControls from "./UsersTableControls.vue";
 import UsersTable from "./UsersTable.vue";
+import { UsePageStore } from "@/state/stores/PageStore";
 
+const { setPageTitle } = UsePageStore();
 const { getUsersData: usersData, getUsersLoading: loading } = storeToRefs(
   UseUserStore()
 );
 const { refreshData } = UseUserStore();
+
+setPageTitle("Users List");
 </script>
