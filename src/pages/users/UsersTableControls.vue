@@ -1,8 +1,12 @@
 <template>
   <div class="d-flex justify-space-between mb-4">
-    <p>Users</p>
+    <h1>Users</h1>
     <div class="gap-2">
-      <VBtn tag="router-link" to="/users/create" type="filled"
+      <VBtn
+        color="blue-darken-4"
+        tag="router-link"
+        to="/users/create"
+        type="filled"
         >Create User</VBtn
       >
     </div>
