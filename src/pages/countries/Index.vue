@@ -21,7 +21,12 @@ import { UseCountriesStore } from "@/state/stores/CountriesStore";
 import { storeToRefs } from "pinia";
 import CountriesTableControls from "./CountriesTableControls.vue";
 import CountriesTable from "./CountriesTable.vue";
+import { UsePageStore } from "@/state/stores/PageStore";
+
+const { setPageTitle } = UsePageStore();
 
 const { getCountriesData: countriesData, getCountriesLoading: loading } =
   storeToRefs(UseCountriesStore());
+
+setPageTitle("Countries List");
 </script>
