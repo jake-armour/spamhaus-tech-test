@@ -1,0 +1,24 @@
+name: Unit tests
+on:
+  push:
+    branches: "*"
+  pull_request:
+    branches:
+      - main
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm clean-install
+      - name: Run unit-tests
+        run: npm run ci-test
+      - name: Upload coverage data to codecov.io
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
