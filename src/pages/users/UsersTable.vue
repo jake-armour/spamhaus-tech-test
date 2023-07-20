@@ -98,7 +98,12 @@ const deleteUser = async (id) => {
         </td>
         <td>{{ item.columns["modified-by"] }}</td>
         <td>
-          {{ format(new Date(item.columns["updated-ts"]), "dd/MM/yyyy HH:mm") }}
+          {{
+            format(
+              new Date(item.columns["updated-ts"] * 1000),
+              "dd/MM/yyyy HH:mm"
+            )
+          }}
         </td>
         <td class="text-center">
           <VBtn
