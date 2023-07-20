@@ -7,6 +7,7 @@ export interface IUserData {
 }
 
 export interface IEditAndCreateData {
+  id: number;
   cc: string;
   name: string;
 }

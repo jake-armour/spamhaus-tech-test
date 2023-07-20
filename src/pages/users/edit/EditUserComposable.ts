@@ -16,6 +16,7 @@ export const useEditUserComposable = () => {
     if (!getEditUserData.value) return null;
 
     return {
+      id: getEditUserData.value.id,
       name: getEditUserData.value.name,
       cc: getEditUserData.value.cc,
     };
