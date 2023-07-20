@@ -1,5 +1,5 @@
 import { IUserData } from "@/typings/pages/UserTypes";
-import { ComputedRef, computed, ref, watch } from "vue";
+import { ComputedRef, computed, ref } from "vue";
 import { defineStore } from "pinia";
 import { useBaseUrl } from "@/helpers/UrlBuilder";
 import { useAsyncData } from "@/helpers/DataFetching";
