@@ -2,6 +2,13 @@
 import { IUserData } from "@/typings/pages/UserTypes";
 import { toRefs, ref } from "vue";
 import format from "date-fns/format";
+import italyFlag from "@/assets/IT.png";
+import spainFlag from "@/assets/SP.png";
+import axios from "axios";
+import { useEditUrl } from "@/helpers/UrlBuilder";
+
+const emit = defineEmits(["updated"]);
+
 const props = defineProps<{
   data: IUserData[];
 }>();
@@ -39,13 +46,32 @@ const headers = ref([
   },
   {
     title: "Actions",
-    align: "start",
+    align: "center",
     sortable: false,
     key: "edit",
   },
 ]);
 
+const icons = ref({
+  IT: {
+    icon: italyFlag,
+    title: "Italy",
+  },
+  SP: { icon: spainFlag, title: "Spain" },
+});
+
 const itemsPerPage = ref(10);
+
+const deleteUser = async (id) => {
+  const confirm = window.confirm("Are you sure you want to delete this user?");
+
+  if (confirm) {
+    const url = useEditUrl("users", id);
+    await axios.delete(url.value.toString()).then(() => {
+      emit("updated");
+    });
+  }
+};
 </script>
 
 <template>
@@ -59,17 +85,35 @@ const itemsPerPage = ref(10);
       <tr>
         <td>{{ item.columns.id }}</td>
         <td>{{ item.columns.name }}</td>
-        <td>{{ item.columns.cc }}</td>
+        <td>
+          <VTooltip :text="icons[item.columns.cc].title">
+            <template v-slot:activator="{ props }">
+              <VImg
+                v-bind="props"
+                width="25"
+                :src="icons[item.columns.cc].icon"
+              />
+            </template>
+          </VTooltip>
+        </td>
         <td>{{ item.columns["modified-by"] }}</td>
         <td>
           {{ format(new Date(item.columns["updated-ts"]), "dd/MM/yyyy HH:mm") }}
         </td>
-        <td>
+        <td class="text-center">
           <VBtn
             color="blue-lighten-5"
+            class="mr-2"
             rounded="xl"
             :to="{ path: `/users/${item.columns.id}` }"
             >Edit</VBtn
+          >
+          <VBtn
+            color="red-lighten-5"
+            class="ml-2"
+            rounded="xl"
+            @click="deleteUser(item.columns.id)"
+            >Delete</VBtn
           >
         </td>
       </tr>
