@@ -2,7 +2,7 @@
   <div>
     <div v-if="usersData && !loading">
       <UsersTableControls />
-      <UsersTable :data="usersData" />
+      <UsersTable :data="usersData" @updated="refreshData" />
     </div>
     <VSkeletonLoader v-else boilerplate loading class="mx-auto w-100" />
   </div>
@@ -17,4 +17,5 @@ import UsersTable from "./UsersTable.vue";
 const { getUsersData: usersData, getUsersLoading: loading } = storeToRefs(
   UseUserStore()
 );
+const { refreshData } = UseUserStore();
 </script>
