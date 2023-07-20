@@ -16,9 +16,8 @@
 </template>
 
 <script setup lang="ts">
-import { toRefs, ref } from "vue";
-import { IEditAndCreateData } from "@/typings/pages/UserTypes";
-import { useBaseUrl, useEditUrl } from "@/helpers/UrlBuilder";
+import { ref } from "vue";
+import { useBaseUrl } from "@/helpers/UrlBuilder";
 import axios from "axios";
 import { useRouter } from "vue-router";
 import { UseUserStore } from "@/state/stores/UserStore";
