@@ -1,9 +1,8 @@
-import { TGetApiBaseUrl } from "@/typings/state/StoreTypes";
 import { defineStore } from "pinia";
 import Constants from "./Constants";
 
 interface MainStoreState {
-  apiBaseUrl: TGetApiBaseUrl;
+  apiBaseUrl: string;
 }
 
 export const UseMainStore = defineStore("main", {
@@ -11,6 +10,6 @@ export const UseMainStore = defineStore("main", {
     apiBaseUrl: Constants.API_BASE_URL,
   }),
   getters: {
-    getApiBaseUrl: (state): TGetApiBaseUrl => state.apiBaseUrl,
+    getApiBaseUrl: (state): string => state.apiBaseUrl,
   },
 });

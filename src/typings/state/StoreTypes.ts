@@ -1,1 +1,1 @@
-export type TGetApiBaseUrl = string;
+
