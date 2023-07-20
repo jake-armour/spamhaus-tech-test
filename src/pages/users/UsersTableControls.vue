@@ -4,6 +4,7 @@
     <div class="gap-2">
       <VBtn
         color="blue-darken-4"
+        rounded="xl"
         tag="router-link"
         to="/users/create"
         type="filled"

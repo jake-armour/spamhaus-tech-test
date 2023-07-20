@@ -35,7 +35,7 @@ const headers = ref([
   },
   {
     title: "Actions",
-    align: "start",
+    align: "center",
     sortable: false,
     key: "edit",
   },
@@ -62,8 +62,9 @@ const itemsPerPage = ref(10);
         <td>{{ item.columns.cc }}</td>
         <td><VImg width="25" :src="icons[item.columns.cc]" /></td>
         <td>{{ item.columns.continent }}</td>
-        <td>
-          <VBtn color="blue-lighten-5" rounded="xl">Edit</VBtn>
+        <td class="text-center">
+          <VBtn color="blue-lighten-5" class="mr-2" rounded="xl">Edit</VBtn>
+          <VBtn color="red-lighten-5" class="ml-2" rounded="xl">Delete</VBtn>
         </td>
       </tr>
     </template>
