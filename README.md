@@ -1,6 +1,7 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
+[![codecov](https://codecov.io/gh/jake-armour/spamhaus-tech-test/branch/main/graph/badge.svg?token=SEKKFUDJXB)](https://codecov.io/gh/jake-armour/spamhaus-tech-test)
 
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=bugs)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
