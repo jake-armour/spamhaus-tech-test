@@ -11,12 +11,16 @@ export const useBaseUrl = (apiType: string) => {
   });
 };
 
-export const useEditUrl = (apiType: string) => {
+export const useEditUrl = (apiType: string, id: number = null) => {
   const route = useRoute();
   const idValue = ref("");
 
   if (route?.params.user) {
     idValue.value = `${route.params.user as string}`;
+  }
+
+  if (id) {
+    idValue.value = `/${id.toString()}`;
   }
 
   const baseUrl = useBaseUrl(apiType);
