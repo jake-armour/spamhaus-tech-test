@@ -1,3 +1,13 @@
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=bugs)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
+
 # Vue 3 + TypeScript + Vite
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
