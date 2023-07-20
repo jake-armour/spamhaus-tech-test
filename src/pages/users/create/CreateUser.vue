@@ -37,7 +37,6 @@ const countries = ref([
 
 const createUser = async () => {
   const newUserData = {
-    id: new Date().getTime(),
     ...user.value,
     "modified-by": "admin",
     "updated-ts": Math.floor(new Date().getTime() / 1000),
