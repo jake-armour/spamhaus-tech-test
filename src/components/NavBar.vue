@@ -1,0 +1,3 @@
+<template>
+  <VAppBar></VAppBar>
+</template>
