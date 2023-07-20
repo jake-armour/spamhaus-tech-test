@@ -11,7 +11,7 @@ function refineData<T extends IUserData>(data: T[]): ComputedRef {
 }
 
 export const UseUserStore = defineStore("user", () => {
-  const apiUrl = useBaseUrl("users");
+  const apiUrl = useBaseUrl("users/");
   const { data, loading, refreshData } = useAsyncData<IUserData[]>(apiUrl);
   const tempData = ref<IUserData[]>([]);
 

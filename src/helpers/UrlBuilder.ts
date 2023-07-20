@@ -6,6 +6,6 @@ export const useBaseUrl = (apiType: string) => {
   const { getApiBaseUrl } = storeToRefs(UseMainStore());
 
   return computed(() => {
-    return new URL(`${getApiBaseUrl.value}/${apiType}/`);
+    return new URL(`${getApiBaseUrl.value}/${apiType}`);
   });
 };
