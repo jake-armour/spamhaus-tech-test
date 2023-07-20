@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { IUserData } from "@/typings/pages/UserTypes";
 import { toRefs, ref } from "vue";
-import format from "date-fns/format";
+import italyFlag from "@/assets/IT.png";
+import spainFlag from "@/assets/SP.png";
+
 const props = defineProps<{
   data: IUserData[];
 }>();
@@ -20,6 +22,12 @@ const headers = ref([
     key: "cc",
   },
   {
+    title: "Icon",
+    align: "start",
+    sortable: false,
+    key: "icon",
+  },
+  {
     title: "Continent",
     align: "start",
     sortable: false,
@@ -32,6 +40,11 @@ const headers = ref([
     key: "edit",
   },
 ]);
+
+const icons = ref({
+  IT: italyFlag,
+  SP: spainFlag,
+});
 
 const itemsPerPage = ref(10);
 </script>
@@ -47,6 +60,7 @@ const itemsPerPage = ref(10);
       <tr>
         <td>{{ item.columns.name }}</td>
         <td>{{ item.columns.cc }}</td>
+        <td><VImg width="25" :src="icons[item.columns.cc]" /></td>
         <td>{{ item.columns.continent }}</td>
         <td>
           <VBtn color="blue-lighten-5" rounded="xl">Edit</VBtn>
