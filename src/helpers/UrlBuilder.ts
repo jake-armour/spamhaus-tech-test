@@ -16,7 +16,7 @@ export const useEditUrl = (apiType: string, id: number = null) => {
   const idValue = ref("");
 
   if (route?.params.user) {
-    idValue.value = `${route.params.user as string}`;
+    idValue.value = `/${route.params.user as string}`;
   }
 
   if (id) {
