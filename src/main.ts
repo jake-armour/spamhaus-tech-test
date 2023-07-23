@@ -12,6 +12,8 @@ import "@mdi/font/css/materialdesignicons.css";
 
 import { createPinia } from "pinia";
 
+import axios from "axios";
+
 import router from "@/router";
 
 const vuetify = createVuetify({
@@ -23,5 +25,7 @@ const vuetify = createVuetify({
 });
 
 const pinia = createPinia();
+
+axios.defaults.headers.common["Cache-Control"] = "no-cache";
 
 createApp(App).use(vuetify).use(pinia).use(router).mount("#app");
