@@ -22,7 +22,7 @@ This is my submission for the Frontend tech exercise for SpamHaus.
 - CRUD functionality for users
 - Routing for all pages
 - Some typing
-- Some tests
+- Some tests, including CodeCov coverage monitoring
 - SonarCloud code analysis
 
 ## What I would do with more time
