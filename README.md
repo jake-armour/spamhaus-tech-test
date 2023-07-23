@@ -35,6 +35,8 @@ The code in this repository could also benefit from some more abstraction, an ex
 
 Mobile usage of this app was in the back of my mind while developing this app, so its responsiveness isn't perfect, but most of Vuetify's components resize nicely, and support scrolling on mobile, so it works, but could be improved.
 
+A small one is that ideally I would've liked to use a library to handle the country icons, but with the 2 letter abbreviation for Spain not being it's normal one, I had to adapt to using images for this part.
+
 ## Conclusion
 
 Overall, although I think there are things I would do differently with more time, I think this code test is a good example of the processes I go through to develop code. If I were to develop this code for a production environment, I would definitely implement the ideas that I have addressed above to ensure the code is as clean and reusable as it can be, as well as ensuring the design is as user friendly as it could be too.
