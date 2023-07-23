@@ -6,6 +6,7 @@ import italyFlag from "@/assets/IT.png";
 import spainFlag from "@/assets/SP.png";
 import axios from "axios";
 import { useEditUrl } from "@/helpers/UrlBuilder";
+import { computed } from "vue";
 
 const emit = defineEmits(["updated"]);
 
@@ -13,6 +14,12 @@ const props = defineProps<{
   data: IUserData[];
 }>();
 const { data } = toRefs(props);
+const sortedData = computed(() => {
+  return data.value.sort((a, b) => a.id - b.id);
+});
+
+const itemsPerPage = ref(10);
+
 const headers = ref([
   {
     title: "ID",
@@ -41,7 +48,7 @@ const headers = ref([
   {
     title: "Updated On",
     align: "start",
-    sortable: false,
+    sortable: true,
     key: "updated-ts",
   },
   {
@@ -60,8 +67,6 @@ const icons = ref({
   SP: { icon: spainFlag, title: "Spain" },
 });
 
-const itemsPerPage = ref(10);
-
 const deleteUser = async (id) => {
   const confirm = window.confirm("Are you sure you want to delete this user?");
 
@@ -77,7 +82,7 @@ const deleteUser = async (id) => {
 <template>
   <VDataTable
     v-model:items-per-page="itemsPerPage"
-    :items="data"
+    :items="sortedData"
     :headers="headers"
     item-value="id"
   >
