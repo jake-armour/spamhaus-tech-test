@@ -3,7 +3,7 @@ import { useAsyncData } from "@/helpers/DataFetching";
 import { useEditUrl } from "@/helpers/UrlBuilder";
 import { computed } from "vue";
 
-export const useEditUserComposable = () => {
+export const useUserComposable = () => {
   const url = useEditUrl("users");
   const { data, loading } = useAsyncData<IUserData>(url);
 

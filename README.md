@@ -22,8 +22,8 @@ This is my submission for the Frontend tech exercise for SpamHaus.
 - CRUD functionality for users
 - Routing for all pages
 - Some typing
-- Some tests, including CodeCov coverage monitoring
-- SonarCloud code analysis
+- Some tests, including CodeCov coverage monitoring (badges above)
+- SonarCloud code analysis (badges above)
 
 ## What I would do with more time
 
@@ -32,3 +32,9 @@ I think that I could've done more with code quality (mainly testing and typing) 
 I have kept the design very simplistic, maybe too simplistic, but it keeps in line with material design so allows for easy user experience as it is quite self-explanatory and recognisable to users.
 
 The code in this repository could also benefit from some more abstraction, an example would be the user and country table sharing very similar VDataTable code, which could be moved into a shared Table component.
+
+Mobile usage of this app was in the back of my mind while developing this app, so its responsiveness isn't perfect, but most of Vuetify's components resize nicely, and support scrolling on mobile, so it works, but could be improved.
+
+## Conclusion
+
+Overall, although I think there are things I would do differently with more time, I think this code test is a good example of the processes I go through to develop code. If I were to develop this code for a production environment, I would definitely implement the ideas that I have addressed above to ensure the code is as clean and reusable as it can be, as well as ensuring the design is as user friendly as it could be too.

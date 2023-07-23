@@ -11,13 +11,13 @@
 import { watch } from "vue";
 
 import EditUser from "@/pages/users/edit/EditUser.vue";
-import { useEditUserComposable } from "@/pages/users/edit/EditUserComposable";
+import { useUserComposable } from "@/pages/users/UserComposable";
 import { UsePageStore } from "@/state/stores/PageStore";
 
 const { setPageTitle } = UsePageStore();
 
 const { getEditUserData, getEditUsersLoading, getFormattedEditUsersData } =
-  useEditUserComposable();
+  useUserComposable();
 
 watch(getEditUserData, () => {
   if (getEditUserData.value) {

@@ -8,17 +8,13 @@
 import { watch } from "vue";
 
 import CreateUser from "@/pages/users/create/CreateUser.vue";
-import { useEditUserComposable } from "@/pages/users/edit/EditUserComposable";
+import { useUserComposable } from "@/pages/users/UserComposable";
 import { UsePageStore } from "@/state/stores/PageStore";
 
 const { setPageTitle } = UsePageStore();
 
 const { getEditUserData, getEditUsersLoading, getFormattedEditUsersData } =
-  useEditUserComposable();
+  useUserComposable();
 
-watch(getEditUserData, () => {
-  if (getEditUserData.value) {
-    setPageTitle(`Editing ${getEditUserData.value.name}`);
-  }
-});
+setPageTitle("Create user");
 </script>
