@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { IUserData } from "@/typings/pages/UserTypes";
-import { toRefs, ref } from "vue";
+import { toRefs, ref, computed } from "vue";
 import format from "date-fns/format";
 import italyFlag from "@/assets/IT.png";
 import spainFlag from "@/assets/SP.png";
 import axios from "axios";
 import { useEditUrl } from "@/helpers/UrlBuilder";
-import { computed } from "vue";
 
 const emit = defineEmits(["updated"]);
 
