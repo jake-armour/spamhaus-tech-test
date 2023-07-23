@@ -1,10 +1,10 @@
 <template>
   <div>
     <VForm @submit.prevent="updateUser">
-      <VTextField label="Name" v-model="user.name"></VTextField>
+      <VTextField label="Name" v-model="newUser.name"></VTextField>
       <VSelect
         :items="countries"
-        v-model="user.cc"
+        v-model="newUser.cc"
         item-title="label"
         item-value="value"
       />
@@ -38,9 +38,16 @@ const countries = ref([
   { value: "IT", label: "Italy" },
 ]);
 
+
+const newUser = ref({
+  id: user.value.id,
+  name: user.value.name,
+  cc: user.value.cc,
+});
+
 const updateUser = async () => {
   const newUserData = {
-    ...user.value,
+    ...newUser.value,
     "modified-by": "admin",
     "updated-ts": new Date().getTime(),
   };
