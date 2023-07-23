@@ -19,7 +19,7 @@ export const useAsyncData = <T>(url: URL | Ref<URL>) => {
       loading.value = true;
       try {
         const response = await axios.get<TAxiosData<T>>(
-          `${normaliseUrlString(u)}/`
+          `${normaliseUrlString(u)}`
         );
         data.value = response.data;
       } catch (e) {
