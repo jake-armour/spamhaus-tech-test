@@ -19,11 +19,13 @@ This is my submission for the Frontend tech exercise for SpamHaus.
   - Support for pagination and sorting
   - Added icons in for countries to make it a bit more user friendly
 - Page for editing users
+- Page for creating users
 - CRUD functionality for users
 - Routing for all pages
 - Some typing
 - Some tests, including CodeCov coverage monitoring (badges above)
 - SonarCloud code analysis (badges above)
+- Used conventional commits to keep commit messages tidy
 
 ## What I would do with more time
 
