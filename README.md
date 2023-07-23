@@ -9,21 +9,26 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=jake-armour_spamhaus-tech-test&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=jake-armour_spamhaus-tech-test)
 
-# Vue 3 + TypeScript + Vite
+# Frontend Tech Exercise
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is my submission for the Frontend tech exercise for SpamHaus.
 
-## Recommended IDE Setup
+## Achieved
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- Users table with actions for edit/delete
+  - Support for pagination and sorting
+  - Added icons in for countries to make it a bit more user friendly
+- Page for editing users
+- CRUD functionality for users
+- Routing for all pages
+- Some typing
+- Some tests
+- SonarCloud code analysis
 
-## Type Support For `.vue` Imports in TS
+## What I would do with more time
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+I think that I could've done more with code quality (mainly testing and typing) but, not wanting to spend too much time on this exercise, I believe that I have added some exampled on how I would go about it for this sort of code in production.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+I have kept the design very simplistic, maybe too simplistic, but it keeps in line with material design so allows for easy user experience as it is quite self-explanatory and recognisable to users.
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+The code in this repository could also benefit from some more abstraction, an example would be the user and country table sharing very similar VDataTable code, which could be moved into a shared Table component.
