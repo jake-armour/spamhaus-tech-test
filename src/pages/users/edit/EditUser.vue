@@ -15,6 +15,14 @@
         <VBtn rounded="xl" color="blue-darken-4" type="submit">Save</VBtn>
       </div>
     </VForm>
+
+    <EditCreateDialog
+      v-model="showDialog"
+      :title="dialog.title"
+      :text="dialog.text"
+      :icon="dialog.icon"
+      @close="closeDialog"
+    />
   </div>
 </template>
 
@@ -25,6 +33,7 @@ import { useEditUrl } from "@/helpers/UrlBuilder";
 import axios from "axios";
 import { useRouter } from "vue-router";
 import { UseUserStore } from "@/state/stores/UserStore";
+import EditCreateDialog from "@/components/EditCreateDialog.vue";
 
 const router = useRouter();
 const props = defineProps<{
@@ -38,6 +47,14 @@ const countries = ref([
   { value: "IT", label: "Italy" },
 ]);
 
+const dialog = ref({ title: null, text: null, icon: null });
+const showDialog = ref(false);
+
+const closeDialog = () => {
+  showDialog.value = false;
+  router.push("/users");
+  refreshData();
+};
 
 const newUser = ref({
   id: user.value.id,
@@ -52,9 +69,26 @@ const updateUser = async () => {
     "updated-ts": new Date().getTime(),
   };
   const url = useEditUrl("users", user.value.id);
-  await axios.put(url.value.toString(), newUserData).then(() => {
-    router.push("/users");
-  });
+  await axios
+    .put(url.value.toString(), newUserData)
+    .then(async () => {
+      dialog.value = {
+        icon: "mdi-check-circle",
+        text: `You have successfully updated ${newUser.value.name}`,
+        title: "Success",
+      };
+
+      showDialog.value = true;
+    })
+    .catch((e) => {
+      dialog.value = {
+        icon: "mdi-close-circle",
+        text: "Please try again later",
+        title: "There has been an error",
+      };
+
+      showDialog.value = true;
+    });
 };
 
 const deleteUser = async () => {
@@ -62,10 +96,26 @@ const deleteUser = async () => {
 
   if (confirm) {
     const url = useEditUrl("users", user.value.id);
-    await axios.delete(url.value.toString()).then(() => {
-      refreshData();
-      router.push("/users");
-    });
+    await axios
+      .delete(url.value.toString())
+      .then(async () => {
+        dialog.value = {
+          icon: "mdi-check-circle",
+          text: `You have successfully deleted ${user.value.name}`,
+          title: "Success",
+        };
+
+        showDialog.value = true;
+      })
+      .catch((e) => {
+        dialog.value = {
+          icon: "mdi-close-circle",
+          text: "Please try again later",
+          title: "There has been an error",
+        };
+
+        showDialog.value = true;
+      });
   }
 };
 </script>
