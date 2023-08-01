@@ -26,6 +26,7 @@ This is my submission for the Frontend tech exercise for SpamHaus.
 - Some tests, including CodeCov coverage monitoring (badges above)
 - SonarCloud code analysis (badges above)
 - Used conventional commits to keep commit messages tidy
+- GitHub workflow for running unit tests
 
 ## What I would do with more time
 
